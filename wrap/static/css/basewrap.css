@@ -1,0 +1,34 @@
+.base-class{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo > img{
+    width: 12%;
+    height: 6%;
+}
+
+.side-nav-logo{
+    width: 10%;
+}
+
+.side-nav-button-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15%;
+    height: 88vh;
+}
+
+.side-nav-button > button{
+   height: 50px;
+   width: 160px;
+}
+
+.top-nav-bar{
+    display: flex;
+}
+
+.side-nav-logo-top-nav{
+    height: 0px;
+}
