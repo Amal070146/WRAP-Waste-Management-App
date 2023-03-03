@@ -1,0 +1,6 @@
+.settings-delete-account-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px; 
+    width: 1014px;
+}

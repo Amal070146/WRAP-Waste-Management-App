@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import PostList, PostDetail,home,dashboard,bookings,rewards,news,redeem,notifications,support,settings,logout,track,profile
+from .views import PostList, PostDetail,home,dashboard,bookings,rewards,news,redeem,notifications,support,settings,logout,track,profile,login
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('home/', home, name='home'),
     path('dashboard/',dashboard,name='dashboard'),
     path('bookings/',bookings,name='bookings'),
     path('rewards/',rewards,name='rewards'),
@@ -13,7 +13,9 @@ urlpatterns = [
     path('settings/',settings,name='settings'),
     path('logout/',logout,name='logout'),
     path('track/',track,name='track'),
-    path('profile/',profile,name='profile')
+    path('profile/',profile,name='profile'),
+    path('',login,name='login'),
+
          
 
 

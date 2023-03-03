@@ -53,6 +53,10 @@ def profile(request):
     form = PostForm()
     return render(request, 'profile.html', {'form': form})
 
+def login(request):
+    form = PostForm()
+    return render(request, 'login.html', {'form': form})
+
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer

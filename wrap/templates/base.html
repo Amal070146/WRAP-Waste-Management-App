@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/basew.css" />
+    <link rel="stylesheet" href="../static/css/basewra.css" />
+    <link rel="stylesheet" href="../static/css/settings.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
   </head>
@@ -12,7 +13,7 @@
     <div class="base-class">
       <div class="sidenavwrapper">
         <div class="logo">
-          <a href="/"> <img src="../static/images/WRAP-yellow-logo.svg" alt="" /></a>
+          <a href="/home"> <img src="../static/images/WRAP-yellow-logo.svg" alt="" /></a>
         </div>
         <div class="side-nav-button-wrapper">
           <div class="side-nav-buttons">
@@ -109,13 +110,14 @@
             <h1>{% block title %} {% endblock %}</h1>
           </div>
           <div class="topnavbarsearchwrapper">
-            <div>
-              <input type="text" />
+            <div class="flex justify-center items-center mr-8">
+              <input class="absolute mr-16" type="text" placeholder="Search"/>
+              <img class="relative ml-16" src="../static/images/search-icon.png" alt="">
             </div>
             <button>
               <img
                 class="side-nav-logo-top-nav"
-                src="../static/images/logo.png"
+                src="../static/images/Location-icon.svg"
                 alt=""
               />
             </button>
@@ -125,7 +127,7 @@
               <div>
                 <img
                   class="side-nav-logo"
-                  src="../static/images/logo.png"
+                  src="../static/images/ajay_profile.jpg"
                   alt=""
                 />
               </div>

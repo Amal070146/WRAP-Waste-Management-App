@@ -47,7 +47,7 @@ button>a{
   width: 100%;
 }
 .side-nav-buttons > button {
-  height: 40px;
+  height: 45px;
   background-color: #fff;
   border: none;
 
@@ -57,6 +57,7 @@ button>a{
   padding: 10px;
   border-radius: 5px;
   gap: 10px;
+  padding: 15px;
   width: 100%;
 }
 .side-nav-buttons > button:hover {
@@ -85,8 +86,19 @@ button>a{
 .topnavbartitlewrapper {
   flex: 0.5;
 }
+.topnavbartitlewrapper>h1{
+  font-size: 30px;
+  font-weight: 700;
+}
 .topnavbarsearchwrapper {
   flex: 0.5;
+}
+
+.topnavbarsearchwrapper>div>input{
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  
 }
 .topnavbarprofilebuttonwrapper {
   flex: 0;
@@ -114,4 +126,16 @@ button>a{
 .dynamiccontentwrapper {
   padding: 10px;
   height: 100%;
+}
+
+
+/*------------------home screen---------------*/
+
+.home-display-screen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  padding: 70px 0px;
 }
