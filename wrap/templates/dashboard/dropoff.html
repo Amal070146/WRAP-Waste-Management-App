@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% block title %}Drop Off{% endblock %} 
+{% block content %}
+<section
+  id="Dropoff"
+  class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 mt-[3%] gap-4 overflow-x-auto"
+>
+  <div class="flex gap-8 justify-center flex-wrap">
+    <div class="flex flex-col gap-4">
+      <h1 class="font-semibold text-xl">1.Select the type of waste</h1>
+      <div
+        class="h-72 w-[600px] bg-white rounded-3xl shadow-lg flex flex-wrap gap-8 justify-center items-center py-6"
+      >
+        <div
+          class="bg-orange-500 w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4"
+        >
+          <img src="./logo-images/Schedule-logos-1.svg" class="" />
+          <h1 class="text-white leading-none">Paper or clipboard</h1>
+        </div>
+        <div
+          class="bg-green-700 w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4"
+        >
+          <img src="./logo-images/Schedule-logos-2.svg" class="" />
+          <h1 class="text-white">Bio-waste</h1>
+        </div>
+        <div
+          class="bg-blue-500 w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4"
+        >
+          <img src="./logo-images/Schedule-logos-3.svg" class="" />
+          <h1 class="text-white leading-none">Plastic waste</h1>
+        </div>
+        <div
+          class="bg-red-600 w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4"
+        >
+          <img src="./logo-images/Schedule-logos-4.svg" class="" />
+          <h1 class="text-white">Glass waste</h1>
+        </div>
+        <div
+          class="bg-purple-500 w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4"
+        >
+          <img src="./logo-images/Schedule-logos-5.svg" class="" />
+          <h1 class="text-white">e-waste</h1>
+        </div>
+        <div
+          class="bg-gray-500 w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4"
+        >
+          <img src="./logo-images/Schedule-logos-6.svg" class="" />
+          <h1 class="text-white">Others</h1>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h1 class="font-semibold text-xl ml-4">2.Select time slot</h1>
+      <div
+        class="flex items-center justify-center py-8 px-4 bg-white rounded-3xl shadow-lg w-72 h-72"
+      >
+        <table class="py-4 text-2xl">
+          <tr class="gap-4 border-b-2 border-gray-400">
+            <td class="px-4">06</td>
+            <td class="px-4">:</td>
+            <td class="px-4">23</td>
+            <td class="px-4">PM</td>
+          </tr>
+          <tr class="text-bold text-[#009743] gap-4 border-b-2 border-gray-400">
+            <td class="px-4">06</td>
+            <td class="px-4">:</td>
+            <td class="px-4">24</td>
+            <td class="px-4">PM</td>
+          </tr>
+          <tr>
+            <td class="px-4">06</td>
+            <td class="px-4">:</td>
+            <td class="px-4">25</td>
+            <td class="px-4">PM</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center flex-col ml-52 gap-3 mt-4">
+    <h1 class="font-semibold text-xl">3.Drop Off Point</h1>
+    <div class="mb-3 w-[550px]">
+      <select
+        class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-[#009743] focus:outline-none"
+        aria-label="Default select example"
+      >
+        <option selected>Select the nearest Dropoff point</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <a class="mt-4 ml-52" href="">
+    <button class="px-6 py-3 bg-[#009743] text-white rounded-lg">
+      Schedule DropOff
+    </button>
+  </a>
+</section>
+{% endblock %}

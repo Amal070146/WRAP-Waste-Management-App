@@ -13,6 +13,18 @@ def dashboard(request):
     form = PostForm()
     return render(request, 'dashboard.html', {'form': form})
 
+def pickup(request):
+    form = PostForm()
+    return render(request, 'dashboard/pickup.html', {'form': form})
+
+def report(request):
+    form = PostForm()
+    return render(request, 'dashboard/report.html', {'form': form})
+
+def dropoff(request):
+    form = PostForm()
+    return render(request, 'dashboard/dropoff.html', {'form': form})
+
 def bookings(request):
     form = PostForm()
     return render(request, 'bookings.html', {'form': form})

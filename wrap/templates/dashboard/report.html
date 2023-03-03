@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block title %}  Report{% endblock %}
+{% block content %}  
+<section id= 'Report' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50  mt-[3%] gap-4 overflow-x-auto" >
+			
+			<div class="flex flex-col items-center gap-8 mt-8">
+				<div class="flex h-24 w-[800px] bg-white rounded-lg shadow-lg items-center pl-8 gap-56">
+					<h1 class="text-xl font-semibold">1.Upload a clear picture of the dump</h1>
+					<a href="">
+						<div class="bg-[#009743] py-2 px-4 flex items-center justify-center rounded-lg shadow-sm gap-2 p-4">
+							<img src="./logo-images/upload-White-logo.svg" class=""/>
+							<h1 class="text-white leading-none">Upload</h1>
+						</div>
+					</a>
+				</div>
+				<div class="flex h-24 w-[800px] bg-white rounded-lg shadow-lg items-center pl-8 gap-96">
+					<h1 class="text-xl font-semibold">2.Enter the pincode</h1>
+					<a class="text-xl font-semibold text-[#009743]" href="">Find Pincode</a>
+				</div>
+				<a href="">
+					<button class="px-6 py-4 bg-[#009743] text-white rounded-lg">Report Dump</button>
+				</a>
+				<div class="mt-12 h-52 w-[800px] bg-white rounded-lg shadow-lg flex flex-col justify-center items-center gap-2">
+					<h1 class="text-xl font-semibold">Report to nearest authority</h1>
+					<p class="text-md font-sm">(this is currently in the beta development stage)</p>
+					<a href="">
+						<button class="mt-2 px-4 py-2 bg-[#009743] text-white rounded-lg">Report</button>
+					</a>
+				</div>
+			</div>
+		</section>
+    {% endblock %}
+
