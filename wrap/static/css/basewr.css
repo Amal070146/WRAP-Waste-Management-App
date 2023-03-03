@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
 .base-class {
   display: flex;
 }
@@ -19,7 +22,7 @@
   display: grid;
   place-items: center;
 }
-.logo > img {
+.logo > a > img {
   width: 70%;
 }
 .side-nav-logo {

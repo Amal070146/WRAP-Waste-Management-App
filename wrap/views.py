@@ -9,6 +9,10 @@ def home(request):
     form = PostForm()
     return render(request, 'home.html', {'form': form})
 
+def dashboard(request):
+    form = PostForm()
+    return render(request, 'dashboard.html', {'form': form})
+
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
