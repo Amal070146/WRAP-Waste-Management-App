@@ -13,6 +13,18 @@ def dashboard(request):
     form = PostForm()
     return render(request, 'dashboard.html', {'form': form})
 
+def bookings(request):
+    form = PostForm()
+    return render(request, 'bookings.html', {'form': form})
+
+def rewards(request):
+    form = PostForm()
+    return render(request, 'rewards.html', {'form': form})
+
+def news(request):
+    form = PostForm()
+    return render(request, 'news.html', {'form': form})
+
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
