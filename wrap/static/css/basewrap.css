@@ -69,10 +69,10 @@
   justify-content: space-between;
   padding: 10px;
 }
-.top-nav-bar>div{
-    display: flex;
-    align-items: center;
-    gap:20px
+.top-nav-bar > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .top-nav-bar button {
   border: none;
@@ -87,12 +87,12 @@
   border-radius: 50%;
   object-fit: cover;
 }
-.top-nav-bar>div>a{
-    display: flex;
-    align-items: center;
-    gap:20px;
-    text-decoration: none;
-    color: black;
+.top-nav-bar > div > a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: black;
 }
 .dynamiccontentwrapper {
   /* background-color: #ffcb0a; */
