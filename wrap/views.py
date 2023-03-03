@@ -25,6 +25,34 @@ def news(request):
     form = PostForm()
     return render(request, 'news.html', {'form': form})
 
+def redeem(request):
+    form = PostForm()
+    return render(request, 'redeem.html', {'form': form})
+
+def notifications(request):
+    form = PostForm()
+    return render(request, 'notifications.html', {'form': form})
+
+def support(request):
+    form = PostForm()
+    return render(request, 'support.html', {'form': form})
+
+def settings(request):
+    form = PostForm()
+    return render(request, 'settings.html', {'form': form})
+
+def logout(request):
+    form = PostForm()
+    return render(request, 'logout.html', {'form': form})
+
+def track(request):
+    form = PostForm()
+    return render(request, 'track.html', {'form': form})
+
+def profile(request):
+    form = PostForm()
+    return render(request, 'profile.html', {'form': form})
+
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
