@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-a {
-  text-decoration: none;
-}
 .base-class {
   display: flex;
 }
@@ -22,7 +19,7 @@ a {
   display: grid;
   place-items: center;
 }
-.logo > a > img {
+.logo > img {
   width: 70%;
 }
 .side-nav-logo {
@@ -77,15 +74,8 @@ a {
   align-items: center;
   gap: 20px;
 }
-.topnavbartitlewrapper {
-  flex: 0.5;
-}
-.topnavbarsearchwrapper {
-  flex: 0.5;
-}
-.topnavbarprofilebuttonwrapper {
-  flex: 0;
-}
+
+
 .top-nav-bar button {
   border: none;
   width: 40px;
@@ -107,7 +97,6 @@ a {
   color: black;
 }
 .dynamiccontentwrapper {
-  padding: 10px;
-  background-color: #ffcb0a;
+  /* background-color: #ffcb0a; */
   height: 100%;
 }

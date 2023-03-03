@@ -11,8 +11,7 @@
     <div class="base-class">
       <div class="sidenavwrapper">
         <div class="logo">
-            <a href="/">
-          <img src="../static/images/logo.png" alt="" /></a>
+          <a href="/"> <img src="../static/images/logo.png" alt="" /></a>
         </div>
         <div class="side-nav-button-wrapper">
           <div class="side-nav-buttons">
@@ -97,11 +96,13 @@
       </div>
       <div class="homepagecontentwrapper">
         <div class="top-nav-bar">
-          <div>
+          <div class="topnavbartitlewrapper">
             <h1>{% block title %} {% endblock %}</h1>
           </div>
-          <div>
-            <input type="text" />
+          <div class="topnavbarsearchwrapper">
+            <div>
+              <input type="text" />
+            </div>
             <button>
               <img
                 class="side-nav-logo-top-nav"
@@ -110,7 +111,7 @@
               />
             </button>
           </div>
-          <div>
+          <div class="topnavbarprofilebuttonwrapper">
             <a href="">
               <div>
                 <img
