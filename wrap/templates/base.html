@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/basewra.css" />
+    <link rel="stylesheet" href="../static/css/basewraps.css" />
     <link rel="stylesheet" href="../static/css/settings.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="./logo-images/favicon.ico" />
+    <link rel="icon" href="../static/images/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
@@ -147,17 +147,17 @@
             </button>
           </div>
           <div class="topnavbarprofilebuttonwrapper">
-            <a href="">
+            <a href="/profile">
               <div>
                 <img
-                  class="side-nav-logo"
+                  class="side-nav-logo profile-top-img"
                   src="../static/images/ajay_profile.jpg"
                   alt=""
                 />
               </div>
               <div>
                 <p>{{ user.username|default:'Guest' }}</p>
-                <p>user@{{ user.username|default:'Guest' }}</p>
+                <p>@{{ user.username|default:'Guest' }}</p>
               </div>
             </a>
           </div>

@@ -106,7 +106,14 @@ button>a{
   
 }
 .topnavbarprofilebuttonwrapper {
-  flex: 0;
+  display: flex;
+  width: 12rem;
+  height: 3rem;
+}
+
+.profile-top-img{
+  width: 50px;
+  border-radius: 50%;
 }
 .top-nav-bar button {
   border: none;
@@ -144,3 +151,4 @@ button>a{
   gap: 16px;
   padding: 70px 0px;
 }
+
