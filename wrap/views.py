@@ -83,12 +83,16 @@ def logout(request):
 
 def track(request):
     form = PostForm()
-    m = folium.Map(location=[
-                   10.307897806699529, 76.33507993927475], zoom_start=12)
-    folium.Marker(location=[10.527627837215208, 76.21445706825584]).add_to(m)
-    folium.Marker(location=[10.512665164588398, 76.25561768977308]).add_to(m)
-    folium.Marker(location=[10.380721708232917, 76.2974580261964]).add_to(m)
-    folium.Marker(location=[10.307003287734428, 76.33404101823123]).add_to(m)
+    m = folium.Map(location=[10.307897806699529,
+                   76.33507993927475], zoom_start=12)
+    folium.Marker(location=[10.527627837215208, 76.21445706825584], popup="<p>Waste picked up</p>",
+                  tooltip="11 AM", icon=folium.Icon(color="green")).add_to(m)
+    folium.Marker(location=[10.512665164588398, 76.25561768977308], popup="<p>Reached collection point</p>",
+                  tooltip="04:03 PM", icon=folium.Icon(color="green")).add_to(m)
+    folium.Marker(location=[10.380721708232917, 76.2974580261964], popup="<p>Sent to Infinite waste LLC</p>",
+                  tooltip="05:59 PM", icon=folium.Icon(color="green")).add_to(m)
+    folium.Marker(location=[10.307003287734428, 76.33404101823123], popup="<p>On the way</p>",
+                  tooltip="Just now", icon=folium.Icon(color="green")).add_to(m)
     trail_coordinates = [
         (10.527627837215208, 76.21445706825584),
         (10.523402028044528, 76.21676339524682),
@@ -121,7 +125,7 @@ def track(request):
         (10.307003287734428, 76.33404101823123)
 
     ]
-    folium.PolyLine(trail_coordinates, tooltip="Coast").add_to(m)
+    folium.PolyLine(trail_coordinates, tooltip="Coast",color="darkred").add_to(m)
     m = m._repr_html_()
     return render(request, 'track.html', {'form': form, "m": m})
 
