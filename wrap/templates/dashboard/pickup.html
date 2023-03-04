@@ -1,4 +1,6 @@
-		<section id= 'Schedule' class="flex flex-col bg-gray-50 mt-[3%] gap-4 overflow-x-auto" >
+{% extends 'base.html' %} {% block title %} Pickup{% endblock %}
+{% block content %}		
+<section id= 'Schedule' class="flex flex-col bg-gray-50 mt-[3%] gap-4 overflow-x-auto" >
 			<div class="flex justify-center items-center flex-col gap-6">
 				<div class="flex gap-8 ">
 					<div class="flex flex-col gap-6">
@@ -154,4 +156,5 @@
 					<button class="px-8 py-4 bg-[#009743] text-white rounded-xl">Schedule Pickup</button>
 				</a>
 			</div>
-		</section>
+</section>
+{% endblock %}
