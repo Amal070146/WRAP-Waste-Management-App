@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm
 from rest_framework import generics
-from .models import Post,Users
+from .models import Post,Users,Booking
 from .serializers import PostSerializer
 
 def home(request):
@@ -16,8 +16,15 @@ def dashboard(request):
     return render(request, 'dashboard.html', {'form': form})
 
 def pickup(request):
-    form = PostForm()
-    return render(request, 'dashboard/pickup.html', {'form': form})
+    if request.method=='POST':
+        wastetype = request.POST.get('wastetype')
+        date = request.POST.get('date')
+        address = request.POST.get('address')
+        print(date)
+        book=Booking(wastetype=wastetype,date=date,address=address)
+        book.save()
+
+    return render(request, 'dashboard/pickup.html')
 
 def report(request):
     form = PostForm()
@@ -28,8 +35,8 @@ def dropoff(request):
     return render(request, 'dashboard/dropoff.html', {'form': form})
 
 def bookings(request):
-    form = PostForm()
-    return render(request, 'bookings.html', {'form': form})
+    bookings = Booking.objects.all()
+    return render(request, 'bookings.html', {'bookings': bookings})
 
 def rewards(request):
     form = PostForm()
@@ -68,26 +75,27 @@ def profile(request):
     return render(request, 'profile.html', {'form': form})
 
 def signup(request):
-    uid=Users.uid
     if request.method == "POST":
+        
         if request.POST['password1'] == request.POST['password2']:
             try:
-                Users.objects.get(uid=uid,username = request.POST['username'],email = request.POST['email'])
-                return render(request,'login.html', {'error':'Username is already taken!'})
-            except Users.DoesNotExist:
-                user = Users.objects.create_user(username=request.POST['username'],password=request.POST['password1'],email = request.POST['email'])
-                auth.login(request,user)
-                return redirect('home')
+                User.objects.get(username = request.POST['username'],email = request.POST['email'])
                 user.save()
+                return render(request,'login.html', {'error':'Username is already taken!'})
+            except User.DoesNotExist:
+                user = User.objects.create_user(username=request.POST['username'],password=request.POST['password1'],email = request.POST['email'])
+                auth.login(request,user)
+                user.save()
+                return redirect('home')
+                
         else:
             return render (request,'login.html', {'error':'Password does not match!'})
     else:
         return render(request,'login.html')
 
 def login(request):
-    uid=Users.uid
     if request.method == 'POST':
-        user = auth.authenticate(uid=uid,username=request.POST['username'],password = request.POST['password'],email = request.POST['email'])
+        user = auth.authenticate(username=request.POST['username'],password = request.POST['password'],email = request.POST['email'])
         if user is not None:
             auth.login(request,user)
             return redirect('home')

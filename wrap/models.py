@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime,date
+from django.conf import settings
 
 # Create your models here.
 class Post(models.Model):
@@ -14,4 +16,10 @@ class Users(models.Model):
     password1 = models.CharField(max_length=20)
     password2 = models.CharField(max_length=20)
 
-    
+class Booking(models.Model):
+    book_id=  models.AutoField(primary_key=True)
+    wastetype = models.CharField(max_length=20)
+    date = models.DateField(settings.DATE_FORMAT)
+    typeaddress = models.CharField(max_length=20)
+    address = models.CharField(max_length=50)
+   

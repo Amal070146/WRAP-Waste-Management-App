@@ -7,14 +7,24 @@
     <link rel="stylesheet" href="../static/css/basewra.css" />
     <link rel="stylesheet" href="../static/css/settings.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <link rel="icon" href="./logo-images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+      defer
+    ></script>
     <title>Document</title>
   </head>
   <body>
     <div class="base-class">
-      <div class="sidenavwrapper">
+      <div class="sidenavwrapper ">
         <div class="logo">
-          <a href="/home"> <img src="../static/images/WRAP-yellow-logo.svg" alt="" /></a>
+          <a href="/home">
+            <img src="../static/images/WRAP-yellow-logo.svg" alt=""
+          /></a>
         </div>
         <div class="side-nav-button-wrapper">
           <div class="side-nav-buttons">
@@ -29,98 +39,111 @@
               >
             </button>
             <button>
-             <a href="/bookings">
+              <a href="/bookings">
                 <img
-                class="side-nav-logo"
-                src="../static/images/Booking-nav.svg"
-                alt=""
-              />
-              Bookings
-             </a>  
+                  class="side-nav-logo"
+                  src="../static/images/Booking-nav.svg"
+                  alt=""
+                />
+                Bookings
+              </a>
             </button>
             <button>
-                <a href="/rewards">
-                    <img
-                        class="side-nav-logo"
-                        src="../static/images/Rewards-nav.svg"
-                        alt=""
-                    />
-                    Rewards
-                </a>
+              <a href="/rewards">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/Rewards-nav.svg"
+                  alt=""
+                />
+                Rewards
+              </a>
             </button>
             <button>
-                <a href="/news">
-                    <img
-                        class="side-nav-logo"
-                        src="../static/images/News-nav.svg"
-                        alt=""
-                    />
-                    News
-                </a>
+              <a href="/news">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/News-nav.svg"
+                  alt=""
+                />
+                News
+              </a>
             </button>
             <button>
-                <a href="/redeem">
-              <img
-                class="side-nav-logo"
-                src="../static/images/Redeem-nav.svg"
-                alt=""
-              />
-              Redeem</a>
+              <a href="/redeem">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/Redeem-nav.svg"
+                  alt=""
+                />
+                Redeem</a
+              >
             </button>
           </div>
           <div class="side-nav-buttons">
-            <button><a href="/notifications">
-              <img
-                class="side-nav-logo"
-                src="../static/images/Notification-nav.svg"
-                alt=""
-              />
-              Notifications</a>
-            </button>
-            <button><a href="/support">
-              <img
-                class="side-nav-logo"
-                src="../static/images/Support-nav.svg"
-                alt=""
-              />
-              Support</a>
-            </button>
-            <button><a href="/settings">
-              <img
-                class="side-nav-logo"
-                src="../static/images/Settings.svg"
-                alt=""
-              />
-              Settings</a>
+            <button>
+              <a href="/notifications">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/Notification-nav.svg"
+                  alt=""
+                />
+                Notifications</a
+              >
             </button>
             <button>
-                <a href="/logout">
-              <img
-                class="side-nav-logo"
-                src="../static/images/Logout-nav.svg"
-                alt=""
-              />
-              Logout</a>
+              <a href="/support">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/Support-nav.svg"
+                  alt=""
+                />
+                Support</a
+              >
+            </button>
+            <button>
+              <a href="/settings">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/Settings.svg"
+                  alt=""
+                />
+                Settings</a
+              >
+            </button>
+            <button>
+              <a href="/logout">
+                <img
+                  class="side-nav-logo"
+                  src="../static/images/Logout-nav.svg"
+                  alt=""
+                />
+                Logout</a
+              >
             </button>
           </div>
         </div>
       </div>
-      <div class="homepagecontentwrapper">
-        <div class="top-nav-bar">
+      <div class="homepagecontentwrapper ">
+        <div class="top-nav-bar  ">
           <div class="topnavbartitlewrapper">
             <h1>{% block title %} {% endblock %}</h1>
           </div>
-          <div class="topnavbarsearchwrapper">
+          <div class="topnavbarsearchwrapper  ">
             <div class="flex justify-center items-center mr-8">
-              <input class="absolute mr-16" type="text" placeholder="Search"/>
-              <img class="relative ml-16" src="../static/images/search-icon.png" alt="">
+              <input class="absolute mr-16" type="text" placeholder="Search" />
+              <img
+                class="relative ml-16"
+                src="../static/images/search-icon.png"
+                alt=""
+              />
             </div>
             <button>
+              <a href="/track">
               <img
                 class="side-nav-logo-top-nav"
                 src="../static/images/Location-icon.svg"
                 alt=""
-              />
+              /></a>
             </button>
           </div>
           <div class="topnavbarprofilebuttonwrapper">
@@ -134,7 +157,7 @@
               </div>
               <div>
                 <p>{{ user.username|default:'Guest' }}</p>
-                <p>{{ user.uid|default:'Guest' }}{{ user.username|default:'Guest' }}</p>
+                <p>user@{{ user.username|default:'Guest' }}</p>
               </div>
             </a>
           </div>
@@ -143,6 +166,7 @@
           {% block content %} {% endblock %}
         </div>
       </div>
-    </div>
+    </div>{% block script %} {% endblock %}
+    
   </body>
 </html>
