@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="base-class">
-      <div class="sidenavwrapper ">
+      <div class="sidenavwrapper">
         <div class="logo">
           <a href="/home">
             <img src="../static/images/WRAP-yellow-logo.svg" alt=""
@@ -123,12 +123,12 @@
           </div>
         </div>
       </div>
-      <div class="homepagecontentwrapper ">
-        <div class="top-nav-bar  ">
+      <div class="homepagecontentwrapper">
+        <div class="top-nav-bar">
           <div class="topnavbartitlewrapper">
             <h1>{% block title %} {% endblock %}</h1>
           </div>
-          <div class="topnavbarsearchwrapper  ">
+          <div class="topnavbarsearchwrapper">
             <div class="flex justify-center items-center mr-8">
               <input class="absolute mr-16" type="text" placeholder="Search" />
               <img
@@ -139,10 +139,10 @@
             </div>
             <button>
               <a href="/track">
-              <img
-                class="side-nav-logo-top-nav"
-                src="../static/images/Location-icon.svg"
-                alt=""
+                <img
+                  class="side-nav-logo-top-nav"
+                  src="../static/images/Location-icon.svg"
+                  alt=""
               /></a>
             </button>
           </div>
@@ -166,7 +166,7 @@
           {% block content %} {% endblock %}
         </div>
       </div>
-    </div>{% block script %} {% endblock %}
-    
+    </div>
+    {% block script %} {% endblock %}
   </body>
 </html>
