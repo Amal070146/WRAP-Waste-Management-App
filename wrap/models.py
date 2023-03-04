@@ -15,6 +15,7 @@ class Users(models.Model):
     email = models.CharField(max_length=40)
     password1 = models.CharField(max_length=20)
     password2 = models.CharField(max_length=20)
+    avatar = models.ImageField(upload_to='images/')
 
 class Booking(models.Model):
     book_id=  models.AutoField(primary_key=True)
