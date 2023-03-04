@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PostList, PostDetail,home,dashboard,bookings,rewards,news,redeem,notifications,support,settings,logout,track,profile,login,dropoff,pickup,report
+from .views import PostList, PostDetail,home,dashboard,bookings,rewards,news,redeem,notifications,support,settings,logout,track,profile,login,dropoff,pickup,report,signup
 
 urlpatterns = [path('',login,name='login'),
     path('home/', home, name='home'),
@@ -14,7 +14,7 @@ urlpatterns = [path('',login,name='login'),
     path('logout/',logout,name='logout'),
     path('track/',track,name='track'),
     path('profile/',profile,name='profile'),
-    
+    path('signup/',signup,name='signup'),
     path('report/',report,name='report'),
     path('pickup/',pickup,name='pickup'),
     path('dropoff/',dropoff,name='dropoff'),

@@ -133,8 +133,8 @@
                 />
               </div>
               <div>
-                <p>ajay vishnu</p>
-                <p>@ajayvishnu</p>
+                <p>{{ user.username|default:'Guest' }}</p>
+                <p>{{ user.uid|default:'Guest' }}{{ user.username|default:'Guest' }}</p>
               </div>
             </a>
           </div>

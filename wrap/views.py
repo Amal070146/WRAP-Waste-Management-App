@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm
 from rest_framework import generics
-from .models import Post
+from .models import Post,Users
 from .serializers import PostSerializer
 
 def home(request):
@@ -67,33 +67,32 @@ def profile(request):
     form = PostForm()
     return render(request, 'profile.html', {'form': form})
 
-# def login(request):
-#     form = PostForm()
-#     return render(request, 'login.html', {'form': form})
-
 def signup(request):
+    uid=Users.uid
     if request.method == "POST":
         if request.POST['password1'] == request.POST['password2']:
             try:
-                User.objects.get(username = request.POST['username'])
-                return render (request,'accounts/signup.html', {'error':'Username is already taken!'})
-            except User.DoesNotExist:
-                user = User.objects.create_user(request.POST['username'],password=request.POST['password1'])
+                Users.objects.get(uid=uid,username = request.POST['username'],email = request.POST['email'])
+                return render(request,'login.html', {'error':'Username is already taken!'})
+            except Users.DoesNotExist:
+                user = Users.objects.create_user(username=request.POST['username'],password=request.POST['password1'],email = request.POST['email'])
                 auth.login(request,user)
                 return redirect('home')
+                user.save()
         else:
             return render (request,'login.html', {'error':'Password does not match!'})
     else:
         return render(request,'login.html')
 
 def login(request):
+    uid=Users.uid
     if request.method == 'POST':
-        user = auth.authenticate(username=request.POST['username'],password = request.POST['password'])
+        user = auth.authenticate(uid=uid,username=request.POST['username'],password = request.POST['password'],email = request.POST['email'])
         if user is not None:
             auth.login(request,user)
             return redirect('home')
         else:
-            return render (request,'login.html', {'error':'Username or password is incorrect!'})
+            return render(request,'login.html', {'error':'Username or password is incorrect!'})
     else:
         return render(request,'login.html')
 
