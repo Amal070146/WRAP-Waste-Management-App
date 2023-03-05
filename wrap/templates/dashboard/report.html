@@ -1,33 +1,63 @@
-{% extends 'base.html' %} 
-{% block title %}  Report{% endblock %}
-{% block content %}  
-<section id= 'Report' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50  mt-[3%] gap-4 overflow-x-auto" >
-			
-			<div class="flex flex-col items-center gap-8 mt-8">
-				<div class="flex h-24 w-[800px] bg-white rounded-lg shadow-lg items-center pl-8 gap-56">
-					<h1 class="text-xl font-semibold">1.Upload a clear picture of the dump</h1>
-					<a href="">
-						<div class="bg-[#009743] py-2 px-4 flex items-center justify-center rounded-lg shadow-sm gap-2 p-4">
-							<img src="./logo-images/upload-White-logo.svg" class=""/>
-							<h1 class="text-white leading-none">Upload</h1>
-						</div>
-					</a>
-				</div>
-				<div class="flex h-24 w-[800px] bg-white rounded-lg shadow-lg items-center pl-8 gap-96">
-					<h1 class="text-xl font-semibold">2.Enter the pincode</h1>
-					<a class="text-xl font-semibold text-[#009743]" href="">Find Pincode</a>
-				</div>
-				<a href="">
-					<button class="px-6 py-4 bg-[#009743] text-white rounded-lg">Report Dump</button>
-				</a>
-				<div class="mt-12 h-52 w-[800px] bg-white rounded-lg shadow-lg flex flex-col justify-center items-center gap-2">
-					<h1 class="text-xl font-semibold">Report to nearest authority</h1>
-					<p class="text-md font-sm">(this is currently in the beta development stage)</p>
-					<a href="">
-						<button class="mt-2 px-4 py-2 bg-[#009743] text-white rounded-lg">Report</button>
-					</a>
-				</div>
-			</div>
-		</section>
-    {% endblock %}
-
+{% extends 'base.html' %} {% block title %} Report{% endblock %}
+ {% block content %}
+<section
+  id="Report"
+  class="flex flex-col bg-gray-50 w-full h-full gap-4 overflow-x-auto"
+>
+  <div class="flex flex-col items-center justify-center gap-4">
+    <div
+      class="flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg w-[900px] h-[450px] px-8 py-4 gap-2"
+    >
+      <h1 class="text-[#009743] text-xl font-semibold">Upload your images</h1>
+      <p class="text-gray-500 text-sm">
+        Please upload a clear picture of the dump.
+      </p>
+      <p class="text-gray-500 text-sm">(Only PNG, JPG images are supported)</p>
+      <div class="Neon Neon-theme-dragdropbox">
+        <input
+          style="
+            z-index: 999;
+            opacity: 0;
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            right: 0px;
+            left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+          "
+          name="files[]"
+          id="filer_input2"
+          multiple="multiple"
+          type="file"
+        />
+        <div class="Neon-input-dragDrop">
+          <div class="Neon-input-inner">
+            <div class="Neon-input-icon">
+              <i class="fa fa-file-image-o"></i>
+            </div> <a class="Neon-input-choose-btn "><img src="../../static/images/Upload-black.svg" alt=""></a>
+            <div class="Neon-input-text"> <span style="display: inline-block; margin: 15px 0">or</span>
+              <h3>Drag and drop or browse to choose a file</h3>
+             
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center items-center bg-white w-[900px] h-36 gap-4 rounded-3xl shadow-lg py-4"
+    >
+      <h1 class="text-black text-xl font-semibold">
+        Enter the location of the dump
+      </h1>
+      <input class="w-[825px] h-12 bg-[#ececec] rounded-xl" type="text" />
+    </div>
+    <a class="" href="/dashboard">
+      <button type="submit" class="px-6 py-3 bg-[#009743] text-white rounded-lg">
+        REPORT
+      </button>
+    </a>
+  </div>
+</section>
+{% endblock %}

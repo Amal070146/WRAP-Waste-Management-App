@@ -2,22 +2,19 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from .forms import PostForm
-from rest_framework import generics
 from .models import Post, Users, Booking
-from .serializers import PostSerializer
 import folium
 
 
 def home(request):
-    form = PostForm()
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'home.html')
 
 
 def dashboard(request):
-    form = PostForm()
-    return render(request, 'dashboard.html', {'form': form})
+    return render(request, 'dashboard.html')
 
+def bin(request):
+    return render(request, 'dashboard/bin.html')
 
 def pickup(request):
     if request.method == 'POST':
@@ -32,12 +29,10 @@ def pickup(request):
 
 
 def report(request):
-    form = PostForm()
-    return render(request, 'dashboard/report.html', {'form': form})
+    return render(request, 'dashboard/report.html')
 
 
 def dropoff(request):
-    form = PostForm()
     return render(request, 'dashboard/dropoff.html', {'form': form})
 
 
@@ -47,42 +42,34 @@ def bookings(request):
 
 
 def rewards(request):
-    form = PostForm()
-    return render(request, 'rewards.html', {'form': form})
+    return render(request, 'rewards.html')
 
 
 def news(request):
-    form = PostForm()
-    return render(request, 'news.html', {'form': form})
+    return render(request, 'news.html')
 
 
 def redeem(request):
-    form = PostForm()
-    return render(request, 'redeem.html', {'form': form})
+    return render(request, 'redeem.html')
 
 
 def notifications(request):
-    form = PostForm()
-    return render(request, 'notifications.html', {'form': form})
+    return render(request, 'notifications.html')
 
 
 def support(request):
-    form = PostForm()
-    return render(request, 'support.html', {'form': form})
+    return render(request, 'support.html')
 
 
 def settings(request):
-    form = PostForm()
-    return render(request, 'settings.html', {'form': form})
+    return render(request, 'settings.html')
 
 
 def logout(request):
-    form = PostForm()
-    return render(request, 'logout.html', {'form': form})
+    return render(request, 'logout.html')
 
 
 def track(request):
-    form = PostForm()
     m = folium.Map(location=[10.307897806699529,
                    76.33507993927475], zoom_start=12)
     folium.Marker(location=[10.527627837215208, 76.21445706825584], popup="<p>Waste picked up</p>",
@@ -127,12 +114,11 @@ def track(request):
     ]
     folium.PolyLine(trail_coordinates, tooltip="Coast",color="darkred").add_to(m)
     m = m._repr_html_()
-    return render(request, 'track.html', {'form': form, "m": m})
+    return render(request, 'track.html', { "m": m})
 
 
 def profile(request):
-    form = PostForm()
-    return render(request, 'profile.html', {'form': form})
+    return render(request, 'profile.html')
 
 
 def signup(request):
@@ -170,11 +156,3 @@ def login(request):
         return render(request, 'login.html')
 
 
-class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
-
-
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer

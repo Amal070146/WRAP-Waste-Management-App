@@ -1,45 +1,50 @@
-{% extends 'base.html' %} {% block title %} Settings{% endblock %} {%
-blockcontent %}
-<section id="Settings" class="flex flex-col bg-gray-50 gap-4 overflow-x-auto">
+{% extends 'base.html' %} {% block title %} Settings{% endblock %} 
+{%block content %}
+<section id="Settings" class="flex flex-col w-full h-full bg-gray-50 gap-4 overflow-x-auto">
   <div class="flex flex-col gap-4 ml-24">
     <h1 class="text-2xl font-semibold my-4 text-left">Edit Profile</h1>
     <div class="flex gap-4">
-      <div class="bg-white w-[550px] h-52 rounded-3xl shadow-lg">
-        <div class="flex h-1/2 w-[550px] items-center gap-0">
-          <form method="post" enctype="multipart/form-data">
+      <div class="bg-white w-[550px] p-4 h-52 rounded-3xl shadow-lg gap-6">
+          <form id="myform" method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %} 
+                
+        <div  class="flex h-1/2 w-[550px] items-center gap-2">
             <img
               class="rounded-[50%] h-16 w-16 ml-6"
-              src="../static/images/ajay_profile.jpg"
+              src="../static/images/profile-user.png"
               alt="profile pic"
             />
-            <h1 class="font-xl text-xl ml-2">Update Picture</h1>
-
+            <h1 class="font-xl text-xl ml-2">{{ user.username|default:'Guest' }}</h1>
+            <label for="file-upload"  class="py-2 px-3 m-auto bg-[#009743] rounded-lg text-white ml-4">
+            <input type="file" id="file-upload" name="avatar" style="display: none;"
+             
+            />
+              Update Picture
+            </label>
             <button
-              class="py-2 px-3 m-auto bg-[#009743] rounded-lg text-white ml-14"
-            >
-              Upload
-            </button>
-            <a href=""
-              ><h1 class="text-[#009743] font-semibold mr-14">Remove</h1></a
-            >
-          </form>
+      class="py-2 ml-0 my-4 m-auto bg-[#009743] rounded-lg text-white px-3" type="submit"
+    >
+      Save changes
+    </button>
+         
         </div>
         <div class="flex gap-12 items-center px-6">
           <div class="w-1/2 h-full flex flex-col gap-2">
-            <h1>First Name</h1>
+            <h1>Name</h1>
             <input
               class="w-52 h-9 border-2 border-gray-500 rounded-md pl-1"
               type="text"
             />
           </div>
           <div class="w-1/2 h-full flex flex-col gap-2">
-            <h1>Last Name</h1>
+            <h1>Username</h1>
             <input
               class="w-52 h-9 border-2 border-gray-500 rounded-md pl-1"
               type="text"
             />
           </div>
         </div>
+         </form>
       </div>
       <div class="bg-white w-[450px] h-52 rounded-3xl shadow-lg">
         <h1 class="font-xl ml-4 text-xl pl-2 py-4">Change password</h1>
@@ -94,11 +99,7 @@ blockcontent %}
       </div>
     </div>
 
-    <button
-      class="py-2 ml-0 my-4 m-auto bg-[#009743] rounded-lg text-white px-3"
-    >
-      Save changes
-    </button>
+    
   </div>
 </section>
 
