@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WRAP Login</title>
-    <link rel="stylesheet" href="../static/css/login.css" />
+    <link rel="stylesheet" href="../static/css/loginkk.css" />
     <link rel="icon" href="../static/images/favicon.ico" />
   </head>
   <body>
@@ -14,7 +14,7 @@
         <form method="POST" action="{% url 'signup' %}">
           {% csrf_token %}
           <h1>Create Account</h1>
-           {{error}}
+          {{error}}
           <input type="text" placeholder="Name" name="username" />
           <input type="email" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password1" />
@@ -24,7 +24,14 @@
             name="password2"
           />
           <!-- <button><a href="/home"> Sign Up</a></button> -->
-          <input type="submit" value="signup" />
+          <input style="
+              background-color: #009743;
+              border-radius: 11px;
+              width: 150px;
+              padding: 8px 0px;
+              color: white;
+              font-size: 17px;
+            " type="submit" value="Sign Up" />
         </form>
       </div>
       <div class="form-container sign-in-container">
@@ -41,29 +48,61 @@
           <input type="text" placeholder="Name" name="username" />
           <input type="email" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password" />
-          <input type="submit" value="Login" />
-
-          <a href="#">Forgot your password?</a>
-          <button><a href="/home"> Sign In</a></button>
+          <input
+            style="
+              background-color: #009743;
+              border-radius: 11px;
+              width: 150px;
+              padding: 8px 0px;
+              color: white;
+              font-size: 17px;
+            "
+            type="submit"
+            value="Login"
+          />
         </form>
       </div>
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
-	    <img class="Img-logo" src="../static/images/WRAP-green-logo.png" alt="logo">
-	    <br>
+            <img
+              class="Img-logo"
+              src="../static/images/WRAP-green-logo.png"
+              alt="logo"
+            />
+            <br />
             <h1>Welcome Back!</h1>
             <p>
               To keep connected with us please login with your personal info
             </p>
-            <button class="ghost" id="signIn">Sign In</button>
+            <button class="ghost" style="
+              background-color: transparent;
+              border-radius: 11px;
+              width: 150px;
+              padding: 8px 0px;
+              color: white;
+              border: 2px solid white;
+              font-size: 17px;
+            " id="signIn">Sign In</button>
           </div>
           <div class="overlay-panel overlay-right">
-	    <img class="Img-logo" src="./logo-images/WRAP-green-logo.png" alt="logo">
-            <br>
+            <img
+              class="Img-logo"
+              src="../static/images/WRAP-green-logo.png"
+              alt="logo"
+            />
+            <br />
             <h1>Hello, Friend!</h1>
             <p>Enter your personal details and start journey with us</p>
-            <button class="ghost" id="signUp">Sign Up</button>
+            <button class="ghost"  style="
+              background-color: transparent;
+              border-radius: 11px;
+              width: 150px;
+              padding: 8px 0px;
+              color: white;
+              border: 2px solid white;
+              font-size: 17px;
+            " id="signUp">Sign Up</button>
           </div>
         </div>
       </div>

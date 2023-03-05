@@ -9,12 +9,15 @@ import folium
 def home(request):
     return render(request, 'home.html')
 
-
 def dashboard(request):
     return render(request, 'dashboard.html')
 
 def bin(request):
     return render(request, 'dashboard/bin.html')
+
+def pickupsuccess(request):
+    return render(request, 'successfull/pickup.html')
+
 
 def pickup(request):
     if request.method == 'POST':
@@ -24,7 +27,6 @@ def pickup(request):
         print(date)
         book = Booking(wastetype=wastetype, date=date, address=address)
         book.save()
-
     return render(request, 'dashboard/pickup.html')
 
 
@@ -33,7 +35,7 @@ def report(request):
 
 
 def dropoff(request):
-    return render(request, 'dashboard/dropoff.html', {'form': form})
+    return render(request, 'dashboard/dropoff.html')
 
 
 def bookings(request):

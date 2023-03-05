@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home,dashboard,bin,bookings,rewards,news,redeem,notifications,support,settings,logout,track,profile,login,dropoff,pickup,report,signup
+from .views import home,dashboard,bin,bookings,rewards,news,redeem,pickupsuccess,notifications,support,settings,logout,track,profile,login,dropoff,pickup,report,signup
 
 urlpatterns = [
     path('',login,name='login'),
@@ -20,7 +20,7 @@ urlpatterns = [
     path('pickup/',pickup,name='pickup'),
     path('dropoff/',dropoff,name='dropoff'),
     path('bin/',bin,name='bin'),
-
+    path('pickupsuccess/',pickupsuccess,name='pickupsuccess')
          
 
 
