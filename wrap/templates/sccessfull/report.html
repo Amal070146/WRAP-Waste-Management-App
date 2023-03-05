@@ -1,11 +1,18 @@
 {% extends 'base.html' %} 
 {% block title %}  Home{% endblock %}
 {% block content %}  
-<div class=" bg-gray-50 home-display-screen" >
-	 
-		<img class="" src="../static/images/Home-img.svg">
-		<a href="">
-			<img src="../static/images/Play Store.svg"/>
-		</a>
-	</div>
+	<section id= 'ReportdumpSuccess' class="flex flex-col bg-gray-50 gap-4 overflow-x-auto justify-center" >
+		<div class="flex justify-center items-center mt-0">	
+			<img class="w-[450px]" src="logo-images/ReportDump-Success.svg"/>
+		</div>
+		<div>
+			<h1 class="text-center text-4xl font-semibold p-2 leading-none">Dump reported Successfully</h1>
+			<h1 class="text-center text-lg font-lg p-2 leading-none">Nearest authorities will be informed and necessary actions wil be taken.</h1>
+		</div>
+		<div class="flex justify-center">
+			<a href="#Dashboard">
+				<button class="w-48 h-12 rounded-lg bg-[#009743] text-white">Go back</button>
+			</a>
+		</div>
+	</section>
     {% endblock %}
