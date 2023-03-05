@@ -18,6 +18,14 @@ def bin(request):
 def pickupsuccess(request):
     return render(request, 'successfull/pickup.html')
 
+def dropsuccess(request):
+    return render(request, 'successfull/dropoff.html')
+
+def binsuccess(request):
+    return render(request, 'successfull/bin.html')
+
+def reportsuccess(request):
+    return render(request, 'successfull/report.html')
 
 def pickup(request):
     if request.method == 'POST':

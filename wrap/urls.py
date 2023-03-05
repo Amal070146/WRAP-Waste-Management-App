@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home,dashboard,bin,bookings,rewards,news,redeem,pickupsuccess,notifications,support,settings,logout,track,profile,login,dropoff,pickup,report,signup
+from .views import home,dashboard,dropsuccess,bin,binsuccess,reportsuccess,bookings,rewards,news,redeem,pickupsuccess,notifications,support,settings,logout,track,profile,login,dropoff,pickup,report,signup
 
 urlpatterns = [
     path('',login,name='login'),
@@ -20,8 +20,10 @@ urlpatterns = [
     path('pickup/',pickup,name='pickup'),
     path('dropoff/',dropoff,name='dropoff'),
     path('bin/',bin,name='bin'),
-    path('pickupsuccess/',pickupsuccess,name='pickupsuccess')
-         
+    path('pickupsuccess/',pickupsuccess,name='pickupsuccess'),
+    path('dropsuccess/',dropsuccess,name='dropsuccess'),
+    path('binsuccess/',binsuccess,name='binsuccess'),
+    path('reportsuccess/',reportsuccess,name='reportsuccess')
 
 
     #  path('simple-api/', PostList.as_view(), name='post_list'),

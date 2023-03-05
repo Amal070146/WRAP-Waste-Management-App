@@ -66,6 +66,12 @@ button>a{
   padding: 15px;
   width: 100%;
 }
+
+.side-nav-buttons >button> .logout-style:hover{
+   transition: all 200ms;
+  background-color: #ffa8a8;
+}
+
 .side-nav-buttons > button:hover {
   transition: all 200ms;
   background-color: #FFCC0E;
@@ -222,3 +228,4 @@ button>a{
     -moz-transition: all 0.2s;
     transition: all 0.2s;
 }
+

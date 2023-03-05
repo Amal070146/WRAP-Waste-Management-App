@@ -15,7 +15,7 @@ a {
   display: flex;
 }
 .sidenavwrapper {
-  flex: 0.2;
+  flex: 0.15;
   gap: 20px;
   width: 350px;
   height: 100vh;
@@ -23,7 +23,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #008BFF;
 }
 .logo {
   display: grid;
@@ -52,6 +51,7 @@ button>a{
   gap: 10px;
   flex-direction: column;
   width: 100%;
+  margin-left: 25px;
 }
 .side-nav-buttons > button {
   height: 45px;
@@ -61,12 +61,17 @@ button>a{
   transition: all 200ms;
   display: flex;
   align-items: center;
-  padding: 10px;
   border-radius: 5px;
-  gap: 10px;
+  gap: 15px;
   padding: 15px;
   width: 100%;
 }
+
+.side-nav-buttons >button> .logout-style:hover{
+   transition: all 200ms;
+  background-color: #ffa8a8;
+}
+
 .side-nav-buttons > button:hover {
   transition: all 200ms;
   background-color: #FFCC0E;
@@ -223,3 +228,4 @@ button>a{
     -moz-transition: all 0.2s;
     transition: all 0.2s;
 }
+

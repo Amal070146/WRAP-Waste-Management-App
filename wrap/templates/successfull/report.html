@@ -1,17 +1,17 @@
 {% extends 'base.html' %} 
-{% block title %}  Home{% endblock %}
+{% block title %}  Reported Successfull{% endblock %}
 {% block content %}  
-	<section id= 'ReportdumpSuccess' class="flex flex-col bg-gray-50 gap-4 overflow-x-auto justify-center" >
+	<section id= 'ReportdumpSuccess' class="flex flex-col bg-gray-50 h-full w-full gap-4 overflow-x-auto justify-center" >
 		<div class="flex justify-center items-center mt-0">	
-			<img class="w-[450px]" src="logo-images/ReportDump-Success.svg"/>
+			<img class="w-[450px]" src="../../static/images/ReportDump-Success.svg"/>
 		</div>
 		<div>
 			<h1 class="text-center text-4xl font-semibold p-2 leading-none">Dump reported Successfully</h1>
 			<h1 class="text-center text-lg font-lg p-2 leading-none">Nearest authorities will be informed and necessary actions wil be taken.</h1>
 		</div>
 		<div class="flex justify-center">
-			<a href="#Dashboard">
-				<button class="w-48 h-12 rounded-lg bg-[#009743] text-white">Go back</button>
+			<a href="/dashboard" class="w-48 h-12 rounded-lg py-2 text-center bg-[#009743] text-white">
+				Go back
 			</a>
 		</div>
 	</section>
